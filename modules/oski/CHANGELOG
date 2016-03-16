@@ -1,0 +1,28 @@
+2014-03-10 Aaron Russo <arusso@berkeely.edu> - 0.0.9
+* Added function num2str
+
+2014-02-28 Aaron Russo <arusso@berkeley.edu> - 0.0.8
+* Added hostname_s# fact
+* Cleaned up docs a bit
+
+2013-08-05 Aaron Russo <arusso@berkeley.edu> - 0.0.7
+* Added license and copyright
+
+2013-06-02 Aaron Russo <arusso@berkeley.edu> - 0.0.6
+* Updating to acct for github account rename
+
+2013-05-28 Aaron Russo <arusso@berkeley.edu> - 0.0.5
+* Added bool2str function
+
+2013-05-17 Aaron Russo <arusso@berkeley.edu> - 0.0.4
+* Added array_do and array_do_r as a poor mans loop
+
+2013-05-13 Aaron Russo <arusso@berkeley.edu> - 0.0.3
+* Added is_ipv4, is_ipv6 functions.
+* Added ssh_dsa_fp and ssh_rsa_fp facts
+
+2013-05-13 Aaron Russo <arusso@berkeley.edu> - 0.0.2
+* Added array_difference and array_intersect functions
+
+2013-04-29 Aaron Russo <arusso@berkeley.edu> - 0.0.1
+* Initial release

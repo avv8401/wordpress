@@ -1,0 +1,45 @@
+{
+  "name": "flakrat-repo_epel",
+  "version": "1.0.3",
+  "author": "Mike Hanby",
+  "summary": "Configures the EPEL Yum repository config to point to a local mirror on Enterprise Linux (RHEL, CentOS) clients",
+  "license": "Apache License, Version 2.0",
+  "source": "https://github.com/flakrat/repo_epel.git",
+  "project_page": "https://github.com/flakrat/repo_epel",
+  "issues_url": "https://github.com/flakrat/repo_epel/issues",
+  "checksums": {
+    "Rakefile": "f37e6131fe7de9a49b09d31596f5fbf1",
+    "files/RPM-GPG-KEY-EPEL-4": "5cae203dcc391b87190191bce7ef9962",
+    "files/RPM-GPG-KEY-EPEL-5": "5cae203dcc391b87190191bce7ef9962",
+    "manifests/source.pp": "447ec231bd295cdb2f2b5f889607ce04",
+    "files/RPM-GPG-KEY-EPEL-6": "b3956578dbc4a117ba474ef92b1c8c13",
+    "manifests/testing_source.pp": "d77da9dea5cae1dc8c2ce33d225d24c5",
+    "lib/facter/os_maj_version.rb": "a1dd18a64d87e0b349f17a3c9b95dc0b",
+    "files/RPM-GPG-KEY-EPEL-7": "58fa8ae27c89f37b08429f04fd4a88cc",
+    "Modulefile": "96835685b2f91438d3e3e0857f4a2a8c",
+    "spec/spec.opts": "a600ded995d948e393fbe2320ba8e51c",
+    "tests/init.pp": "0c81b5cc228e0b0ed7e0c42def11fff9",
+    "spec/spec_helper.rb": "3ea886dd135e120afa31e0aab12e85b0",
+    "manifests/rpm_gpg_key.pp": "6f97003820c9a6b142648acafa8d4a87",
+    "LICENSE": "2b42edef8fa55315f34f2370b4715ca9",
+    "manifests/params.pp": "0349a640a5cd4c109ce0ad64cf88768d",
+    "manifests/debuginfo.pp": "ef67d7d5ffae63794e10ca5795fc7e88",
+    "manifests/init.pp": "1e3fb5c1642d33820680e18dcc0e45e5",
+    "files/RPM-GPG-KEY-EPEL": "5cae203dcc391b87190191bce7ef9962",
+    "manifests/testing_debuginfo.pp": "5cc0dd17012b07c2c76327f370956b6a",
+    "manifests/testing.pp": "07f7dd475817a58618739eeffa057162",
+    "manifests/epel.pp": "10eea768208741d51bbd14ca2a3f5c76",
+    "README.md": "bd65262cb608bbfcce71f34ef6abf433"
+  },
+  "description": "Puppet Module to manage the EPEL repositories on RHEL/CentOS clients (currently supports EL releases 5 and 6).\n\nTODO:\n * Make yum priorities configurable\n\nOriginally based off of http://github.com/stahnma/puppet-module-puppetlabs_yum\n\n============================================\nExtra Packages for Enterprise Linux (or EPEL) is a Fedora Special\nInterest Group that creates, maintains, and manages a high quality\nset of additional packages for Enterprise Linux, including, but\nnot limited to, Red Hat Enterprise Linux (RHEL),CentOS and\nScientific Linux (SL).\nhttp://fedoraproject.org/wiki/EPEL\n============================================",
+  "types": [
+  
+  ],
+  "dependencies": [
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 2.0.0"
+    },
+    {"name":"puppetlabs/stdlib","version_requirement":">= 2.0.0"}
+  ]
+}

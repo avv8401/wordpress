@@ -1,0 +1,103 @@
+<% if @super_user -%>
+user <%= @daemon_user %>;
+<% end -%>
+# Число рабочих процессов, рекомендуется ставить по количеству ядер. В последних версиях нужно ставить  avto
+worker_processes <%= @worker_processes %>;
+
+# Уменьшает число системных вызовов gettimeofday(), что приводит к увеличению производительности
+timer_resolution 100ms;
+
+<% if @worker_rlimit_nofile -%>
+# Изменяет ограничение на число используемых файлов RLIMIT_NOFILE для рабочего процесса.
+worker_rlimit_nofile <%= @worker_rlimit_nofile %>;
+<% end -%>
+
+<% if @pid -%>
+pid        <%= @pid %>;
+<% end -%>
+
+error_log  <%= @nginx_error_log %>;
+
+events {
+  worker_connections <%= @worker_connections -%>;
+  <%- if @multi_accept == 'on' -%>
+    multi_accept on;
+  <%- end -%>
+  <%- if @events_use -%>
+    use <%= @events_use %>;
+  <%- end -%>
+}
+
+
+http {
+  include       <%= @conf_dir %>/mime.types;
+  default_type  application/octet-stream;
+  log_format main '$remote_addr - $remote_user [$time_local] $request '
+  	'"$status" $body_bytes_sent "$http_referer" '
+  	'"$http_user_agent" "$http_x_forwarded_for"';
+
+
+  access_log  <%= @http_access_log %> main;
+  # Включить sendfile(). Использование sendfile() экономит системные вызовы, уменьшает число копирований данных, 
+  # позволяет использовать меньше физической памяти.
+ <%- if @sendfile == 'on' -%>
+  sendfile	on;
+ <%- end -%>
+ <%- if @http_tcp_nopush == 'on' -%>
+  tcp_nopush	on;
+ <%- end -%>
+  tcp_nodelay	<%= @http_tcp_nodelay %>;
+
+  keepalive_timeout  <%= @keepalive_timeout %>;
+  
+  #Разрешает или запрещает выдавать версию nginx’а в сообщениях об ошибках и в поле “Server” заголовка ответа.
+  server_tokens <%= @server_tokens %>;
+
+  types_hash_max_size <%= @types_hash_max_size %>;
+  types_hash_bucket_size <%= @types_hash_bucket_size %>;
+
+  server_names_hash_bucket_size <%= @names_hash_bucket_size %>;
+  server_names_hash_max_size <%= @names_hash_max_size %>;
+
+<% if @gzip == 'on' %>
+  gzip            on;
+  gzip_static     on;
+  gzip_disable    "msie6";
+  gzip_vary       on;
+  gzip_proxied    any;
+  gzip_comp_level 5;
+  gzip_min_length 1100;
+  gzip_buffers 64 8k;
+  gzip_http_version 1.1;
+  gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
+<% end -%>
+
+<% if @proxy_cache_path -%>
+  proxy_cache_path        <%= @proxy_cache_path %> levels=<%= @proxy_cache_levels %> keys_zone=<%= @proxy_cache_keys_zone %> max_size=<%= @proxy_cache_max_size %> inactive=<%= @proxy_cache_inactive %>;
+
+<% end -%>
+<% if @fastcgi_cache_path -%>
+  fastcgi_cache_path    	<%= @fastcgi_cache_path %> levels=<%= @fastcgi_cache_levels %> keys_zone=<%= @fastcgi_cache_keys_zone %> max_size=<%= @fastcgi_cache_max_size %> inactive=<%= @fastcgi_cache_inactive %>;
+<% end -%>
+<% if @fastcgi_cache_key -%>
+  fastcgi_cache_key		    <%= @fastcgi_cache_key %>;
+<% end -%>
+<% if @fastcgi_cache_use_stale -%>
+  fastcgi_cache_use_stale <%= @fastcgi_cache_use_stale %>;
+<% end -%>
+<% if @http_cfg_append -%>
+
+  <%- field_width = @http_cfg_append.inject(0) { |l,(k,v)| k.size > l ? k.size : l } -%>
+  <%- @http_cfg_append.sort_by{|k,v| k}.each do |key,value| -%>
+  <%= sprintf("%-*s", field_width, key) %> <%= value %>;
+  <%- end -%>
+<% end -%>
+
+  include <%= @conf_dir %>/conf.d/*.conf;
+  include <%= @conf_dir %>/sites-enabled/*;
+}
+<% if @mail -%>
+mail {
+  include <%= @conf_dir %>/conf.mail.d/*.conf;
+}
+<% end -%>

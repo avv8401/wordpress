@@ -1,0 +1,64 @@
+2015-03-04 Aaron Russo <arusso@berkeley.edu> - 1.2.1
+* fix issue where COMMIT entry was not done on a per-table basis
+* refactor some of our spec tests, doing more thorough testing of content
+* update documentation with internal structures
+
+2015-03-03 Aaron Russo <arusso@berkeley.edu> - 1.2.0
+* fix issues with table creation for tables other than filter
+* fix implementation of redirection to use proper directive, --to-port
+
+2015-02-25 Aaron Russo <arusso@berkeley.edu> - 1.1.0
+* add raw_after parameter to allow raw text after jump target directive
+* add redirect_to parameter to support --redirect-to directive
+* update module metadata to use metadata.json and remove Modulefile
+
+2013-09-19 Aaron Russo <arusso@berkeley.edu> - 1.0.1
+* issue #18 - add parameter strict_protocol_checking
+
+2013-08-05 Aaron Russo <arusso@berkeley.edu> - 1.0.0
+* issue #8 - Protocol must be specified when providing sport or dport
+* issue #17 - invalid source/destination ip can generate undesired rules
+
+2013-07-29 Aaron Russo <arusso@berkeley.edu> - 0.9.6
+* issue #15 - travis-ci integration is broken
+* issue #16 - rules containing ipv4 hosts are creating match-all ipv6 rules
+* Added LICENSE and Copyright information
+* Added testing for Puppet 3.x
+* Removed testing for Puppet 2.6
+
+2013-07-25 Aaron Russo <arusso@berkeley.edu> - 0.9.5
+* issue #14 - multiple destination addresses generated bad rules
+* issue #13 - symlinks break puppetdoc
+
+2013-06-14 Aaron Russo <arusso@berkeley.edu> - 0.9.4
+* fixed issue where using log_prefix could generate an invalid rule
+
+2013-06-13 Aaron Russo <arusso@berkeley.edu> - 0.9.3
+* fixed error in logic that didnt have rules applying in certain cases
+
+2013-06-07 Aaron Russo <arusso@berkeley.edu> - 0.9.2
+* bugfixes only
+fixed:
+* reject_with parameter has no affect (Issue #10)
+
+2013-06-06 Aaron Russo <arusso@berkeley.edu> - 0.9.1
+* bugfixes only
+fixed:
+* potential for unwanted rules to be generated (Issue #9)
+* comments no appearing (Issue #7)
+
+2013-06-06 Aaron Russo <arusso@berkeley.edu> - 0.9.0
+* major rewrite of code
+fixed:
+* group entries by table AND chain (Issue #2)
+* ip6tables support (Issue #3)
+* move logic out of template (Issue #6)
+
+2013-06-02 Aaron Russo <arusso@berkeley.edu> - 0.0.3
+* travis-ci support
+
+2013-04-30 Aaron Russo <arusso@berkeley.edu> - 0.0.2
+* Improve RegEx validation code and fix bug with source port (ajacques)
+
+2013-04-29 Aaron Russo <arusso@berkeley.edu> - 0.0.1
+* Initial Release

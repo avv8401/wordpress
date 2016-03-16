@@ -1,0 +1,40 @@
+{
+  "name": "arusso-oski",
+  "version": "0.0.9",
+  "source": "UNKNOWN",
+  "author": "arusso",
+  "license": "MIT License",
+  "summary": "A library of useful functions",
+  "description": "This is an additional library of functions, not found in stdlib\n  that come in handy.",
+  "project_page": "UNKNOWN",
+  "dependencies": [
+
+  ],
+  "types": [
+
+  ],
+  "checksums": {
+    "CHANGELOG": "e67f6e13988d99966c6de62add41b972",
+    "LICENSE": "fbfe578caf7e0886e3aae63cdc7c27a3",
+    "Modulefile": "2163c579a9158b8b67f825bb36444bd7",
+    "README.markdown": "8aa9780808ea8a587ad8db90e544f9e9",
+    "lib/facter/hostname_segments.rb": "90cfb9ea4a084855b67a5118e93934b6",
+    "lib/facter/osplatform.rb": "9cab47bdb46b93bc0b9cdc0e0107f61c",
+    "lib/facter/sshfp.rb": "f5757af7e63a799c4fef1042532d5086",
+    "lib/puppet/parser/functions/any2bool.rb": "9a33c68686b26701e2289f553bed78e5",
+    "lib/puppet/parser/functions/array_difference.rb": "87a546e5f23a7a38ef82c5e1dfdd98b5",
+    "lib/puppet/parser/functions/array_do.rb": "058bcbfdbea024a61dbcb866438145af",
+    "lib/puppet/parser/functions/array_do_r.rb": "0b26aecb25082e53eb049388d4b9aa81",
+    "lib/puppet/parser/functions/array_intersect.rb": "1069e7b3333130de09bfe7649d940203",
+    "lib/puppet/parser/functions/bool2str.rb": "b27df9d46255af96bab4c2f4ca155523",
+    "lib/puppet/parser/functions/delete_key_with_value.rb": "88b07abe5f2f13582b450b444096a6ee",
+    "lib/puppet/parser/functions/is_ipv4.rb": "89aac3223129ea29c3081ca94e33d9b0",
+    "lib/puppet/parser/functions/is_ipv6.rb": "b6043b78c8c2899b26051e8f7131d32b",
+    "lib/puppet/parser/functions/lead.rb": "a17b1bec5e02a2e3a2b39a52b525546a",
+    "lib/puppet/parser/functions/num2str.rb": "c3b332cec99a31b543e5a02a4fc14dfa",
+    "lib/puppet/parser/functions/params_lookup.rb": "a8168006f38c3c6b83d1b1f750a8c60e",
+    "lib/puppet/parser/functions/similar_elements.rb": "ebfe702a541964502cffac83ee8d2bf8",
+    "lib/puppet/parser/functions/validate_ip.rb": "9085993d7b5f31792937339fde17cdd4",
+    "manifests/init.pp": "33b9897af07de35f25bd69d59c17934f"
+  }
+}
